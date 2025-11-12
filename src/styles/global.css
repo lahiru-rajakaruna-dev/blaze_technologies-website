@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+
+    --font-montserrat: "Montserrat";
+    --font-opensans: "Open Sans";
+    --color-primary-base: #0A0B0D;
+    --color-secondary-base: #13171A;
+    --color-secondary-dark: #0A0B0D;
+    --color-secondary-light: #252C33;
+    --color-accent-base: #00FFFF;
+    --color-accent-dark: #36B8B8;
+    --color-accent-light: #1AFFFD;
+    --color-text-light: #F3F5F7;
+    --color-text-dark: #C9CACC;
+    --color-support-base: #4D0099;
+    --color-support-dark: #330066;
+    --color-support-light: #6600CC;
+
+    --drop-shadow-dark: "0px 2px 0px 4px var(--color-secondary-dark), 0px 4px 0px 8px var(--color-secondary-light)";
+
+    --drop-shadow-accent: "0px 2px 0px 4px var(--color-accent-dark), 0px 4px 0px 8px var(--color-accent-light)";
+
+    /* --color-primary-base: hsl(216, 28%, 5, 100);
+    --color-secondary-base: hsl(215, 28%, 10, 100);
+    --color-secondary-dark: hsl(215, 28%, 5, 100);
+    --color-secondary-light: hsl(215, 28%, 20, 100);
+    --color-accent-base: hsl(180, 100%, 50, 100);
+    --color-accent-dark: hsl(180, 54%, 45, 100);
+    --color-accent-light: hsl(180, 100%, 55, 100);
+    --color-accent-text-light: hsl(204, 29%, 97, 100);
+    --color-accent-text-dark: hsl(204, 4%, 79, 100);
+    --color-support-base: hsl(270, 100%, 30, 100);
+    --color-support-dark: hsl(270, 100%, 20, 100);
+    --color-support-light: hsl(270, 100%, 40, 100); */
+}
+
+@layer base {
+    :root {
+        color: var(--color-text-light);
+        background-color: var(--color-primary-base)
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-montserrat);
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    body {
+        font-family: var(--font-opensans);
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+    }
+
+}
