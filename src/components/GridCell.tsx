@@ -42,10 +42,12 @@ export default function GridCell(
     StartingRow: TStartingRow;
     ColumnSpan: TColumnSpan;
     RowSpan: TRowSpan;
+    id?: string;
   }>
 ) {
   return (
     <div
+      id={props.id ?? undefined}
       class={`relative w-full h-full p-8 rounded-2xl 
         ${StartingColumnOptions[props.StartingColumn]}
         ${StartingRowOptions[props.StartingRow]}
