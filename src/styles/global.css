@@ -59,3 +59,17 @@
     }
 
 }
+
+#pain-offline-image {
+    background-image: url('/offline_vs_online_v2.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#pain-coding-image {
+    background-image: url('/tech_effort.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
