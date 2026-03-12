@@ -1,9 +1,6 @@
 name: Publish Page
 
 on:
-  push:
-    branches:
-      - production
   pull_request:
     types: [closed]
     branches:
