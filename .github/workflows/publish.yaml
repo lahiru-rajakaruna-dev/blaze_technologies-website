@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install PNPM
-        run: npm i -G pnpm@latest
+        run: npm i -g pnpm@latest
 
       - name: Install Dependencies
         run: pnpm install
