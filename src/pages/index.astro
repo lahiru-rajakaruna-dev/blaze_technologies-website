@@ -1,11 +1,506 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Container from "../components/Container";
+import Grid from "../components/Grid";
+import Section from "../components/Section";
+import Layout from "../layouts/Layout.astro";
+import GridCell from "../components/GridCell";
+import Navigation from "../components/Navigation";
+import {PrimaryButton} from "../components/Button";
 ---
 
 <Layout>
-	<Welcome />
+    <header>
+        <Navigation client:load/>
+        <section class='w-full h-fit max-h-[90vh]'>
+            <Container>
+                <div class='relative aspect-video w-full h-auto p-8'>
+                    <!-- TEXT -->
+                    <div class='absolute z-20 bottom-8 left-8 w-fit h-fit'>
+                        <em>CONTACT SHOULD CONNECTED WITH THE WHATSAPP</em>
+                        <h1 class='mb-4 font-bold text-4xl text-text-light'>
+                            <span> Conquer Your Digital Space. </span>
+                            <br/>
+                            <span> Let People Know You Are Here </span>
+                        </h1>
+                        <div class='w-full max-w-[60ch] mb-8'>
+                            <p>
+                                Let your name reach people far beyond your
+                                physical realm. With
+                                you online, you can serve more reach more, earn
+                                more.
+                            </p>
+                            <p>Let us be your technical co-founders.</p>
+                        </div>
+
+                        <PrimaryButton
+                                client:load
+                                onClick={() => console.log("PRIMARY ACTION")}
+                        >
+                            <p>Let&apos;s Create the RoadMap</p>
+                        </PrimaryButton>
+                    </div>
+
+                    <!-- BACKGROUND -->
+                    <div
+                            class='absolute z-10 inset-0 w-full h-full'
+                            style={"background-image: linear-gradient(to bottom right,rgba(13,17,27,0.5), rgba(13,17,27,0.5)), url('/hero-bg.svg');background-position:top right; background-repeat:no-repeat; background-size:50%;"}
+                    >
+                    </div>
+                </div>
+            </Container>
+        </section>
+    </header>
+
+    <main class='flex flex-col items-stretch justify-start'>
+        <Section>
+            <Container>
+                <h2 class='w-full h-fit mb-6 text-2xl font-semibold'>
+                    Dont Like to Code. Let Us Do That for You.
+                </h2>
+                <Grid>
+                    <GridCell
+                            StartingColumn={1}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={3}
+                    >
+                        <div class='absolute inset-0'>
+                            <div
+                                    class='w-full h-full bg-[url(/placement-section-main.svg)] bg-contain bg-no-repeat bg-center'
+                            >
+                            </div>
+                            <div class='absolute left-0 bottom-0 right-0 p-8'>
+                                <h3 class='text-lg font-bold'>Conquer Your
+                                    Digital Space</h3>
+                                <p class='font-thin text-xl'>
+                                    Everyone is online, why not you?
+                                </p>
+                            </div>
+                        </div>
+                    </GridCell>
+
+                    <GridCell
+                            StartingColumn={1}
+                            ColumnSpan={2}
+                            StartingRow={4}
+                            RowSpan={1}
+                    >
+                        <div
+                                class='w-full h-full flex flex-col items-center justify-center'
+                        >
+                            <PrimaryButton
+                                    onClick={() => console.log("PRIMARY_ACTION")}>
+                                <p class='text-secondary-base font-semibold'>
+                                    Create Free Roadmap
+                                </p>
+                            </PrimaryButton>
+                        </div>
+                    </GridCell>
+
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div class='absolute inset-0 p-4 overflow-hidden'>
+                            <div
+                                    class='w-full h-full overflow-hidden bg-[url(/ui_ux.svg)] bg-contain bg-center bg-no-repeat'
+                            >
+                            </div>
+                            <div class='absolute bottom-0 left-0 right-0 p-8'>
+                                <p class='text-xl'>UI/UX Design</p>
+                            </div>
+                        </div>
+                    </GridCell>
+
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div class='absolute inset-0 p-4'>
+                            <div
+                                    class='w-full h-full overflow-hidden bg-[url(/mobile_dev.svg)] bg-contain bg-center bg-no-repeat'
+                            >
+                            </div>
+                            <div class='absolute bottom-0 left-0 right-0 p-8'>
+                                <p class='text-xl'>Mobile Development</p>
+                            </div>
+                        </div>
+                    </GridCell>
+
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div class='absolute inset-0 p-4'>
+                            <div
+                                    class='w-full h-full overflow-hidden bg-[url(/web_design.svg)] bg-contain bg-center bg-no-repeat'
+                            >
+                            </div>
+                            <div class='absolute bottom-0 left-0 right-0 p-8'>
+                                <p class='text-xl'>Web Design</p>
+                            </div>
+                        </div>
+                    </GridCell>
+
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div class='absolute inset-0 p-4'>
+                            <div
+                                    class='w-full h-full overflow-hidden bg-[url(/web_development.svg)] bg-contain bg-center bg-no-repeat'
+                            >
+                            </div>
+                            <div class='absolute bottom-0 left-0 right-0 p-8'>
+                                <p class='text-xl'>Web App/Site Development</p>
+                            </div>
+                        </div>
+                    </GridCell>
+                </Grid>
+            </Container>
+        </Section>
+
+        <Section>
+            <Container>
+                <h2 class='w-full h-fit mb-6 text-2xl font-semibold'>
+                    Nowadays Everyone is online. Why not you?
+                </h2>
+                <Grid>
+                    <GridCell
+                            StartingColumn={1}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={4}
+                    >
+                        <div class='absolute left-0 bottom-0 right-0 p-8'>
+                            <p class='mb-4 text-2xl'>
+                                You could be losing customers, and profit
+                            </p>
+                            <p>
+                                If you only do business physically, then you can
+                                only serve so
+                                much. and probably not alot of people know you.
+                                That's alot of
+                                profit.
+                            </p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            id='pain-offline-image'
+                            StartingColumn={3}
+                            ColumnSpan={4}
+                            StartingRow={1}
+                            RowSpan={4}
+                    />
+                </Grid>
+            </Container>
+        </Section>
+
+        <Section>
+            <Container>
+                <h2 class='w-full h-fit mb-6 text-3xl font-semibold'>
+                    <span> You Want to Go Digital, </span>
+                    <br/>
+                    <span>
+            You Don&apos;t Know and Don&apos;t Want to Code for Hours?
+          </span>
+                </h2>
+                <Grid>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={4}
+                    >
+                        <div class='absolute left-0 bottom-0 right-0 p-8'>
+                            <p class='mb-4 text-2xl'>
+                                You want to go digital, but coding for hours
+                                really makes it not
+                                worth right?
+                            </p>
+                            <p>
+                                It's a fair point. Going digital takes time and
+                                a lot of effort.
+                                Researching a good tech stack. Planning the
+                                project. Coding it
+                                all out. Its whole other side.
+                            </p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            id='pain-coding-image'
+                            StartingColumn={1}
+                            ColumnSpan={4}
+                            StartingRow={1}
+                            RowSpan={4}
+                    >
+                        <div>
+                            <p>Web App/Site Development</p>
+                        </div>
+                    </GridCell>
+                </Grid>
+            </Container>
+        </Section>
+
+        <Section>
+            <Container>
+                <h2 class='w-full h-fit mb-6 text-2xl font-semibold'>
+                    We Can Get You Online for You!
+                </h2>
+                <Grid>
+                    <GridCell
+                            id="solution-image"
+                            StartingColumn={1}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={4}
+                    >
+                        <div class="absolute z-[1] top-0 left-0 bottom-0 right-0 bg-secondary-dark/30">
+                            <div class="absolute z-[2] bottom-0 left-0 right-0 p-8 bg-secondary-dark/50">
+                                <p class="mb-4 text-2xl">Let us take care of the
+                                    tech</p>
+                                <p>While you handle the business, we handle the
+                                    infrastructure</p>
+                            </div>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>UI/UX Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Mobile App Development</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web App/Site Development</p>
+                        </div>
+                    </GridCell>
+                </Grid>
+            </Container>
+        </Section>
+
+        <Section>
+            <Container>
+                <h2 class='w-full h-fit mb-6 text-2xl font-semibold'>
+                    Our Idea-to-Online Roadmap Will Show You How It&apos;s Done.
+                    Step by
+                    Step.
+                </h2>
+                <Grid>
+                    <GridCell
+                            StartingColumn={1}
+                            StartingRow={1}
+                            ColumnSpan={2}
+                            RowSpan={4}
+                    >
+                        <div>
+                            <h3>Conquer Your Digital Space</h3>
+                            <p>Everyone is online, why not you?</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>UI/UX Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Mobile App Development</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web App/Site Development</p>
+                        </div>
+                    </GridCell>
+                </Grid>
+            </Container>
+        </Section>
+
+        <Section>
+            <Container>
+                <h2 class='w-full h-fit mb-6 text-2xl font-semibold'>
+                    This is Who We Helped So Far.
+                </h2>
+                <Grid>
+                    <GridCell
+                            StartingColumn={1}
+                            StartingRow={1}
+                            ColumnSpan={2}
+                            RowSpan={4}
+                    >
+                        <div>
+                            <h3>Conquer Your Digital Space</h3>
+                            <p>Everyone is online, why not you?</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>UI/UX Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Mobile App Development</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web App/Site Development</p>
+                        </div>
+                    </GridCell>
+                </Grid>
+            </Container>
+        </Section>
+
+        <Section>
+            <Container>
+                <h2 class='w-full h-fit mb-6 text-2xl font-semibold'>
+                    You Don&apos;t Have to Start Yet. First Build the Roadmap
+                    with Us. For
+                    Free.
+                </h2>
+                <Grid>
+                    <GridCell
+                            StartingColumn={1}
+                            StartingRow={1}
+                            ColumnSpan={2}
+                            RowSpan={4}
+                    >
+                        <div>
+                            <h3>Conquer Your Digital Space</h3>
+                            <p>Everyone is online, why not you?</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>UI/UX Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={1}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Mobile App Development</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={3}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web Design</p>
+                        </div>
+                    </GridCell>
+                    <GridCell
+                            StartingColumn={5}
+                            ColumnSpan={2}
+                            StartingRow={3}
+                            RowSpan={2}
+                    >
+                        <div>
+                            <p>Web App/Site Development</p>
+                        </div>
+                    </GridCell>
+                </Grid>
+            </Container>
+        </Section>
+    </main>
 </Layout>

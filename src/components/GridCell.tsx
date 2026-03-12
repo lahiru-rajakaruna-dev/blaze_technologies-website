@@ -43,7 +43,7 @@ export default function GridCell(
     ColumnSpan: TColumnSpan;
     RowSpan: TRowSpan;
     id?: string;
-  }>
+  }>,
 ) {
   return (
     <div
@@ -53,7 +53,7 @@ export default function GridCell(
         ${StartingRowOptions[props.StartingRow]}
         ${ColumnSpanOptions[props.ColumnSpan]}
         ${RowSpanOptions[props.RowSpan]}
-        bg-secondary-base drop-shadow-md drop-shadow-secondary-light border border-accent-light`}
+        bg-secondary-base drop-shadow-md drop-shadow-secondary-light border border-accent-light overflow-hidden`}
     >
       {props.children}
     </div>

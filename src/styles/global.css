@@ -5,14 +5,18 @@
     --font-montserrat: "Montserrat";
     --font-opensans: "Open Sans";
     --color-primary-base: #0A0B0D;
+
     --color-secondary-base: #13171A;
     --color-secondary-dark: #0A0B0D;
     --color-secondary-light: #252C33;
+
     --color-accent-base: #00FFFF;
     --color-accent-dark: #36B8B8;
     --color-accent-light: #1AFFFD;
+
     --color-text-light: #F3F5F7;
     --color-text-dark: #C9CACC;
+
     --color-support-base: #4D0099;
     --color-support-dark: #330066;
     --color-support-light: #6600CC;
@@ -70,6 +74,13 @@
 #pain-coding-image {
     background-image: url('/tech_effort.png');
     background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#solution-image {
+    background-image: url('/solution.png');
+    background-size: 170% 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
