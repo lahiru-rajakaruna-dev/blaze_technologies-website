@@ -1,0 +1,49 @@
+name: Publish Page
+
+on:
+  push:
+    branches:
+      - production
+  pull_request:
+    types: [closed]
+    branches:
+      - production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install PNPM
+        run: npm i -G pnpm@latest
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Project
+        run: pnpm run build
+
+      - name: Arcive Artifact
+        run: tar -czvf artifact.tar.gz ./dist
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    steps:
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
+
+
+  
