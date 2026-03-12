@@ -1,10 +1,9 @@
 name: Publish Page
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
-      - production
+      - main
 
 jobs:
   build:
